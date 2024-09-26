@@ -1,3 +1,4 @@
+from .table import Table, Seat
 class Openspace():
     def __init__(self, tables, number_of_tables) -> None:
         """
