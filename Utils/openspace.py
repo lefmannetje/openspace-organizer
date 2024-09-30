@@ -1,4 +1,5 @@
-#from .table import Table, Seat
+import time
+import csv
 class Openspace():
     def __init__(self, list_tables, number_of_tables, list_seats) -> None:
         """
@@ -23,20 +24,28 @@ class Openspace():
                 print("Table is full, plz go to next table.")
 
     def display(self):
+        print("This is the current table arangement!")
         #display the different tables and there occupants in a nice and readable way
         for i, table in enumerate(self.list_tables):
             print(f"=== {table.name} ===")
             for seat in table.seats:
                  print(seat.occupant)
-               
-                 
 
-            
+    def store(self):
+        # Define the headers
+        headers = ['Table', 'user1', 'user2', 'user3', 'user4']
+        data = []
+        # Specify the file name
+        timestr = time.strftime("%dY%m%Y-%H%M%S")
+        filename = f'output.csv_{timestr}'
 
+        # Write the headers to the CSV file
+        with open(filename, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(headers)
 
-    def store():
-        #store the repartition in an excel file
-        pass
+        print(f"CSV file '{filename}' has been created with the specified headers.")
+
 
     def __str__(self):
         return self.number_of_tables, self.list_tables

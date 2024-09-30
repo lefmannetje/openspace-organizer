@@ -61,7 +61,7 @@ print(" ==-- Openspace created --==")
 openspace_item.organize(list_names)
  
 # save the seat assigments to a new file
-# open_space.store(output_filename)
+openspace_item.store()
 
 # display assignments in the terminal
 openspace_item.display()
