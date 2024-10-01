@@ -41,7 +41,7 @@ n_seats = int(len(list_names))
 for i in range(0 , n_seats):    # we make n seats depending on how many names there are in list.
     seat_item = Seat()
     list_seats.append(seat_item)
-print(" ==-- list_seats created --==")
+print("==-- list_seats created --==")
 
 # 3) create tables
 n_tables = int(len(list_names) / 4)     # calculate how many tables we minimum need : 6
@@ -59,17 +59,9 @@ print(" ==-- Openspace created --==")
 # 5) Assign a colleague randomly to a table
 """We want to assign each person from the list to a table. We gonna fill a table untill it's full and than move to the next on."""
 openspace_item.organize(list_names)
-
-#table_item.assign_seat()
-
-
-for i in list_seats:
-    print(i.occupant)
-
-
-""" 
+ 
 # save the seat assigments to a new file
-open_space.store(output_filename)
+openspace_item.store()
 
 # display assignments in the terminal
-open_space.display() """
+openspace_item.display()

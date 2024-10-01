@@ -33,11 +33,12 @@ class Table(object):
         else:
             return False
 
-    def assign_seat(self, name, list_seats):
+    def assign_seat(self, list_seats):
         # assign_seat(name) that places someone at the table
         # assign name to the first free seat
         for seat in list_seats:
-            seat.set_occupant(name)
+            print(name)
+            #seat.set_occupant(name)
 
     def left_capacity():
         #    left_capacity() that returns an integer
